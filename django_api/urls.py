@@ -5,9 +5,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('myapp.urls')),  # Inclut les routes définies dans myapp/urls.py
+    path('api/', include('myapp.urls')),  # 👈 inclusion des routes de l'app myapp
 ]
 
-# Cette ligne permet à Django de servir les fichiers médias pendant le développement
+# pour servir les médias (images, fichiers)
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
